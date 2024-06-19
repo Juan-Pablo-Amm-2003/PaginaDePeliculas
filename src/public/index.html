@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            background-color: red;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+        }
+        .agregar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form input[type="text"] {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        form input[type="submit"] {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: darkred;
+        }
+        .view-movies-button {
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .view-movies-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Netflix</h1>
+    <div class="agregar">
+        <form action="/movies/submit" method="post">
+            <label for="name">Nombre de la película:</label>
+            <input type="text" name="name" id="name" placeholder="Ingresa el nombre de la película" required>
+            
+            <label for="categoria">Categoría:</label>
+            <input type="text" name="categoria" id="categoria" placeholder="Ingresa la categoría" required>
+            
+            <input type="submit" value="Agregar Película">
+        </form>
+        <a href="/movies" class="view-movies-button">Ver todas las películas</a>
+    </div>
+</body>
+</html>
